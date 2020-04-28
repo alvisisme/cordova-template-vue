@@ -1,0 +1,16 @@
+language: shell
+os: linux
+arch: amd64
+dist: bionic
+
+services: docker
+
+branches:
+  only:
+    - master
+
+before_install:
+  - docker --version
+
+script:
+  - docker build --pull -f ci/Dockerfile -t cordova-template-vue .
