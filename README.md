@@ -1,5 +1,7 @@
 # cordova-template-vue
 
+[![Build Status](https://img.shields.io/travis/com/alvisisme/cordova-template-vue?style=flat-square)](https://travis-ci.com/alvisisme/cordova-template-vue)
+
 cordova和vue的工程模板
 
 ## 如何使用
