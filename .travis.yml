@@ -13,4 +13,5 @@ before_install:
   - docker --version
 
 script:
-  - docker build --pull -f ci/Dockerfile.android -t cordova-template-vue .
+  - cat /dev/null > template_src/hooks/android/before_build.js
+  - docker build --pull -f ci/Dockerfile.android --rm -t cordova-template-vue .
