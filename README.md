@@ -5,7 +5,7 @@ cordova和vue的工程模板
 ## 如何使用
 
 ```bash
-cordova create myapp --template git+https://gitlab.alvisisme.com/cordova/cordova-template-vue
+cordova create myapp --template git+https://github.com/alvisisme/cordova-template-vue.git
 cd myapp
 yarn install
 yarn build
