@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.alvisisme.com/cordova/cordova-template-vue"
+    "url": "git+https://github.com/alvisisme/cordova-template-vue.git"
   },
   "keywords": [
     "ecosystem:cordova",
