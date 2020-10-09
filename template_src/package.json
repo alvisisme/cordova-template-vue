@@ -12,7 +12,8 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "ls-lint": "ls-lint"
+    "ls-lint": "ls-lint",
+    "stylelint:fix": "stylelint --fix src/**/*.{sass,scss,vue,css,less,stylus}"
   },
   "dependencies": {
     "core-js": "3.6.4",
@@ -45,6 +46,11 @@
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
     "style-resources-loader": "1.3.3",
+    "stylelint": "13.7.2",
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-selector-bem-pattern": "2.1.0",
     "vue-cli-plugin-style-resources-loader": "0.1.4",
     "vue-template-compiler": "2.6.11"
   },
@@ -55,6 +61,13 @@
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
       "git add"
+    ],
+    "*.{sass,scss,vue,css,less,stylus}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*": [
+      "ls-lint"
     ]
   },
   "cordova": {
