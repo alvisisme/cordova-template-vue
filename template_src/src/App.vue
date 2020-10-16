@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
 <style lang="less">
 .c-App {
   color: #2c3e50;
@@ -27,7 +33,7 @@
 }
 
 /* postcss-bem-linter: ignore */
-.c-App-link .router-link-exact-active {
+.c-App-link.router-link-exact-active {
   color: @theme-color;
 }
 </style>
