@@ -6,14 +6,10 @@ import App from '@/app.vue'
 import router from '@/router'
 import store from '@/store'
 import VuePrototype from '@/prototype'
-import * as VueFilters from '@/filters'
+import '@/filters'
 import '@/directives'
 
 Vue.use(VuePrototype)
-// 注册全局过滤器
-Object.keys(VueFilters).forEach(key => {
-  Vue.filter(key, VueFilters[key])
-})
 
 Vue.config.productionTip = false
 

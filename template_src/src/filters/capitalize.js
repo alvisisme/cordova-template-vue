@@ -9,7 +9,7 @@
  * @param {String} value 需要处理的字符串
  * @param {CapitalizeOptions} options 配置参数
  */
-function capitalize(value, options = {}) {
+function CapitalizeFilter(value, options = {}) {
   const globalOptions = (this && this.capitalize) ? this.capitalize : {}
   options = options || globalOptions
   var onlyFirstLetter = options.onlyFirstLetter != null ? options.onlyFirstLetter : false
@@ -24,4 +24,5 @@ function capitalize(value, options = {}) {
   }
 }
 
-export default capitalize
+// 需要导出一个名字, 否则无法自动注入
+export const capitalize = CapitalizeFilter
