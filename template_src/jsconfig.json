@@ -5,5 +5,10 @@
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["node_modules", "www"]
+  "exclude": [
+    "node_modules",
+    "platforms",
+    "plugins",
+    "www"
+  ]
 }
