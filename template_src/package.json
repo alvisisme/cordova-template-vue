@@ -15,6 +15,7 @@
     "stylelint:fix": "stylelint --fix src/**/*.{sass,scss,vue,css,less,stylus}"
   },
   "dependencies": {
+    "animate.css": "4.1.1",
     "cordova-android": "8.1.0",
     "cordova-plugin-android-permissions": "1.1.0",
     "cordova-plugin-file": "6.0.2",
