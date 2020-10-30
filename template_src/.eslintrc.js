@@ -3,6 +3,9 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    'cordova': 'readonly'
+  },
   extends: [
     'plugin:vue/recommended',
     '@vue/standard'

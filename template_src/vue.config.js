@@ -1,6 +1,7 @@
 const path = require('path')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
+const vConsolePlugin = require('vconsole-webpack-plugin')
 
 const smp = new SpeedMeasurePlugin()
 
@@ -16,6 +17,12 @@ if (IS_DEV) {
     fix: true // 打开自动修复时需要小心，不要再上面的配置中加入js或者html文件，会发生问题，请手动修复
   }))
 }
+
+// eslint-disable-next-line new-cap
+plugins.push(new vConsolePlugin({
+  enable: process.env.VUE_APP_VCONSOLE_ENABLE === 'true'
+}))
+
 const configureWebpack = {
   resolve: {
     alias: {

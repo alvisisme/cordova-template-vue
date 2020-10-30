@@ -1,16 +1,51 @@
 <template>
-  <div id="app" class="app-App">
-    <div id="nav" class="app-App-nav">
-      <router-link to="/" class="app-App-link">Home</router-link> |
-      <router-link to="/about" class="app-App-link">About</router-link>
+  <div
+    id="app"
+    class="app-App"
+  >
+    <div
+      id="nav"
+      class="app-App-nav"
+    >
+      <router-link
+        to="/"
+        class="app-App-link"
+      >Home</router-link> |
+      <router-link
+        to="/about"
+        class="app-App-link"
+      >About</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import PermissionFeature from '@/features/permissions'
+
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    document.addEventListener('deviceready', this.onDeviceReady, false)
+    if (!window.cordova) {
+      this.onDeviceReady()
+    }
+  },
+  methods: {
+    async onDeviceReady() {
+      if (PermissionFeature.enabled()) {
+        const requestPermission = cordova.plugins.permissions.WRITE_EXTERNAL_STORAGE
+        const { hasPermission } = await PermissionFeature.ensurePermission(requestPermission)
+        if (!hasPermission) {
+          window.console.error('not have WRITE_EXTERNAL_STORAGE permission')
+        } else {
+          window.console.log('has WRITE_EXTERNAL_STORAGE permission')
+        }
+      } else {
+        window.console.log('permission feature disabled')
+      }
+    }
+  }
 }
 </script>
 
