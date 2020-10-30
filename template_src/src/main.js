@@ -7,6 +7,7 @@ import router from '@/router'
 import store from '@/store'
 import VuePrototype from '@/prototype'
 import * as VueFilters from '@/filters'
+import '@/directives'
 
 Vue.use(VuePrototype)
 // 注册全局过滤器
