@@ -17,11 +17,8 @@
     "plugin/selector-bem-pattern": {
       "preset": "suit",
       "presetOptions": {
-        "namespace": "c"
-      },
-      "implicitComponents": [
-        "src/**/*.vue"
-      ]
+        "namespace": "app"
+      }
     }
   }
 }

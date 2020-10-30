@@ -1,8 +1,8 @@
 <template>
-  <div id="app" class="c-App">
-    <div id="nav" class="c-App-nav">
-      <router-link to="/" class="c-App-link">Home</router-link> |
-      <router-link to="/about" class="c-App-link">About</router-link>
+  <div id="app" class="app-App">
+    <div id="nav" class="app-App-nav">
+      <router-link to="/" class="app-App-link">Home</router-link> |
+      <router-link to="/about" class="app-App-link">About</router-link>
     </div>
     <router-view />
   </div>
@@ -15,7 +15,8 @@ export default {
 </script>
 
 <style lang="less">
-.c-App {
+/** @define App */
+.app-App {
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
@@ -23,17 +24,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c-App-nav {
+.app-App-nav {
   padding: 30px;
 }
 
-.c-App-link {
+.app-App-link {
   color: #2c3e50;
   font-weight: bold;
 }
 
 /* postcss-bem-linter: ignore */
-.c-App-link.router-link-exact-active {
+.app-App-link.router-link-exact-active {
   color: @theme-color;
 }
 </style>

@@ -8,68 +8,68 @@
         href="https://cli.vuejs.org"
         target="_blank"
         rel="noopener"
-        class="c-HelloWorld-link"
+        class="app-HelloWorld-link"
       >vue-cli documentation</a>.
     </p>
-    <h3 class="c-HelloWorld-item">Installed CLI Plugins</h3>
-    <ul class="c-HelloWorld-list">
-      <li class="c-HelloWorld-listItem">
+    <h3 class="app-HelloWorld-item">Installed CLI Plugins</h3>
+    <ul class="app-HelloWorld-list">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >babel</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >router</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >vuex</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >eslint</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >unit-jest</a>
       </li>
     </ul>
     <h3>Essential Links</h3>
-    <ul class="c-HelloWorld-list">
-      <li class="c-HelloWorld-listItem">
+    <ul class="app-HelloWorld-list">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >Core Docs</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://forum.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >Forum</a>
       </li>
       <li>
@@ -77,66 +77,66 @@
           href="https://chat.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >Community Chat</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://twitter.com/vuejs"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >Twitter</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://news.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >News</a>
       </li>
     </ul>
     <h3>Ecosystem</h3>
-    <ul class="c-HelloWorld-list">
-      <li class="c-HelloWorld-listItem">
+    <ul class="app-HelloWorld-list">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://router.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >vue-router</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://vuex.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >vuex</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/vue-devtools#vue-devtools"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >vue-devtools</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://vue-loader.vuejs.org"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >vue-loader</a>
       </li>
-      <li class="c-HelloWorld-listItem">
+      <li class="app-HelloWorld-listItem">
         <a
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
           rel="noopener"
-          class="c-HelloWorld-link"
+          class="app-HelloWorld-link"
         >awesome-vue</a>
       </li>
     </ul>
@@ -157,21 +157,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.c-HelloWorld-item {
+/** @define HelloWorld */
+.app-HelloWorld-item {
   margin: 40px 0 0;
 }
 
-.c-HelloWorld-list {
+.app-HelloWorld-list {
   padding: 0;
   list-style-type: none;
 }
 
-.c-HelloWorld-listItem {
+.app-HelloWorld-listItem {
   display: inline-block;
   margin: 0 10px;
 }
 
-.c-HelloWorld-link {
-  color: #42b983;
+.app-HelloWorld-link {
+  color: @theme-color;
 }
 </style>
