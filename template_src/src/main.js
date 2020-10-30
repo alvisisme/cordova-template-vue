@@ -7,6 +7,9 @@ import store from '@/store'
 import 'normalize.css'
 import 'animate.css'
 
+import VuePrototype from '@/prototype'
+Vue.use(VuePrototype)
+
 Vue.config.productionTip = false
 
 new Vue({
