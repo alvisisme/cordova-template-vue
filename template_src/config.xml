@@ -34,7 +34,7 @@
     <allow-intent href="geo:*" />
     <icon src="public/logo/icon.png" />
     <platform name="android">
-        <hook type="before_build" src="hooks/android/beforeBuild.js"></hook>
+        <hook type="before_build" src="hooks/android/before_build.js"></hook>
         <allow-intent href="market:*" />
     </platform>
 </widget>

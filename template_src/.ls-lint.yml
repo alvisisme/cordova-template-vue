@@ -1,10 +1,11 @@
 ls:
   src:
-    .js: kebab-case | PascalCase
-    .vue: PascalCase
+    .js: kebab-case
+    .vue: kebab-case
     .less: kebab-case
+    .css: kebab-case
   hooks:
-    .js: camelCase
+    .js: snake_case
 
 ignore:
   - .git
