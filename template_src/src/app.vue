@@ -22,6 +22,7 @@
 
 <script>
 import PermissionFeature from '@/features/permissions'
+import FileFeature from '@/features/file'
 
 export default {
   name: 'App',
@@ -40,6 +41,9 @@ export default {
           window.console.error('not have WRITE_EXTERNAL_STORAGE permission')
         } else {
           window.console.log('has WRITE_EXTERNAL_STORAGE permission')
+        }
+        if (FileFeature.enabled()) {
+          window.console.log('file feature enabled')
         }
       } else {
         window.console.log('permission feature disabled')
