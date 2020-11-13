@@ -2,15 +2,28 @@ const path = require('path')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const vConsolePlugin = require('vconsole-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const smp = new SpeedMeasurePlugin()
 
 const IS_DEV = process.env.NODE_ENV === 'development'
+const IS_PROD = process.env.NODE_ENV === 'production'
+
 const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
 const plugins = []
+const configureWebpack = {
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
+  },
+  optimization: {},
+  plugins
+}
+
 if (IS_DEV) {
   plugins.push(new StylelintPlugin({
     files: ['src/**/*.vue', 'src/**.*.less'],
@@ -20,16 +33,21 @@ if (IS_DEV) {
 
 // eslint-disable-next-line new-cap
 plugins.push(new vConsolePlugin({
-  enable: process.env.VUE_APP_VCONSOLE_ENABLE === 'true'
+  enable: process.env.VCONSOLE_ENABLE === 'true'
 }))
 
-const configureWebpack = {
-  resolve: {
-    alias: {
-      '@': resolve('src')
-    }
-  },
-  plugins
+if (IS_PROD) {
+  const pure_funcs = process.env.NO_CONSOLE_LOG === 'true' ? ['window.console.log'] : []
+  configureWebpack.optimization.minimizer = [
+    new TerserPlugin({
+      sourceMap: false,
+      terserOptions: {
+        compress: {
+          pure_funcs
+        }
+      }
+    })
+  ]
 }
 
 module.exports = {
