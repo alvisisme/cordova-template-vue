@@ -7,9 +7,9 @@
 <script>
 export default {
   name: 'About',
-  data() {
-    return {
-      message: 'this is an about page'
+  computed: {
+    message() {
+      return this.$store.state.about.message
     }
   }
 }

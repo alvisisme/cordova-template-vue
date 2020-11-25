@@ -23,6 +23,7 @@
 <script>
 import PermissionFeature from '@/features/permissions'
 import FileFeature from '@/features/file'
+import PluginManager from '@/core/plugin-manager'
 
 export default {
   name: 'App',
@@ -47,6 +48,13 @@ export default {
         }
       } else {
         window.console.log('permission feature disabled')
+      }
+
+      const plugins = PluginManager.getAll()
+      for (const item of plugins) {
+        if (this.$_.get(item, 'hooks.onAppInit')) {
+          await item.hooks.onAppInit()
+        }
       }
     }
   }
