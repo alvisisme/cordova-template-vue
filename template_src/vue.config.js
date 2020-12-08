@@ -3,11 +3,14 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const vConsolePlugin = require('vconsole-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+// 启动时自动生成应用插件配置文件
+require('./hooks/generate_plugin_config')
 
 const smp = new SpeedMeasurePlugin()
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 const IS_PROD = process.env.NODE_ENV === 'production'
+const ANALYZE_BUILD_PERFORMANCE = process.env.ANALYZE_BUILD_PERFORMANCE === 'true'
 
 const resolve = dir => {
   return path.join(__dirname, dir)
@@ -61,7 +64,7 @@ module.exports = {
       ]
     }
   },
-  configureWebpack: IS_DEV ? configureWebpack : smp.wrap(configureWebpack),
+  configureWebpack: ANALYZE_BUILD_PERFORMANCE ? smp.wrap(configureWebpack) : configureWebpack,
   chainWebpack: config => {
     config.module
       .rule('vue')

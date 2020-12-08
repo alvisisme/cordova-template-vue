@@ -1,0 +1,5 @@
+{
+  "id": "about",
+  "entry": "bootstrap.js",
+  "build": true
+}
